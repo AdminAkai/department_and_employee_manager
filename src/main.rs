@@ -18,7 +18,7 @@ fn main() {
         io::stdin().read_line(&mut employee).expect("Failed to take input.");
         employee = String::from(employee.trim());
 
-        department_data.entry(department).and_modify(|e| { e.push(employee.clone()) }).or_insert(vec![employee]);
+        department_data.entry(department).or_insert_with(|| Vec::new()).push(employee);
         
         println!("Current departments:");
         for (key, val) in &department_data {
