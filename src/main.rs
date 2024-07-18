@@ -23,7 +23,7 @@ fn main() {
         println!("Current departments:");
         for (key, val) in &department_data {
             println!("{key}:");
-            println!("{val:?}");
+            println!("{}", val.join(", "));
         }
 
         println!("Press any key to continue or \"quit\" to quit.");
